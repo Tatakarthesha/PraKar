@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Prasanth &amp; Karthesha | Our Wedding Invitation #PraKar</title>
+
+  <!-- Open Graph Metadata for WhatsApp & Social Media Preview Cards -->
+  <meta property="og:title" content="Prasanth &amp; Karthesha | Our Wedding Invitation">
+  <meta property="og:description" content="Join us as we begin our forever. December 4, 2026 ❤️ #PraKar">
+  <meta property="og:image" content="https://prakarwedding.com/assets/images/whatsapp-preview.jpg">
+  <meta property="og:image:secure_url" content="https://prakarwedding.com/assets/images/whatsapp-preview.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Prasanth and Karthesha making a heart with their hands">
+  <meta property="og:url" content="https://prakarwedding.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prasanth &amp; Karthesha Wedding">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prasanth &amp; Karthesha | Our Wedding Invitation">
+  <meta name="twitter:description" content="Join us as we begin our forever. December 4, 2026 ❤️ #PraKar">
+  <meta name="twitter:image" content="https://prakarwedding.com/assets/images/whatsapp-preview.jpg">
+
+  <meta name="theme-color" content="#FAF6EF">
+
+  <!-- Google Fonts Preconnect (Includes Cinzel, Marcellus, Playfair Display, Cormorant, Plus Jakarta Sans, Noto Serif Telugu) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Particle Effects (Golden sparkles & falling jasmine petals) -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Audio Element for Wedding Background Music -->
+  <audio id="bg-wedding-audio" loop preload="auto">
+    <source src="assets\music\wedding song.mp3" type="audio/mpeg">
+    <source src="assets\music\wedding song.mp3" type="audio/wav">
+  </audio>
+
+  <!-- Floating Music Control Widget -->
+  <button id="music-floating-btn" class="music-floating-btn" aria-label="Toggle Wedding Music">
+    <div class="music-icon-wrap">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+    </div>
+    <div class="music-equalizer">
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+    </div>
+    <span class="music-label">Wedding Music</span>
+  </button>
+
+  <!-- ======================================================================
+       1. WELCOME / ENVELOPE OPENING OVERLAY
+       ====================================================================== -->
+  <section id="welcome-screen" aria-label="Wedding Invitation Envelope">
+    <div class="envelope-wrapper">
+      <div class="envelope-card">
+        <div class="envelope-inner-border"></div>
+
+
+        <p class="envelope-tagline">Royal Wedding Invitation</p>
+
+        <!-- Couple Artwork - FULL PICTURE WITHOUT CROPPING -->
+        <div class="envelope-image-frame">
+          <img src="assets/images/couple.jpg" alt="Prasanth &amp; Karthesha (#PraKar) Wedding Invitation" class="welcome-couple-img">
+        </div>
+
+     
+
+        <!-- Couple Names Preview with clear letter spacing -->
+        <p class="envelope-names-preview">
+          <span class="couple-name">Karthesha</span> <span class="couple-ampersand">&amp;</span> <span class="couple-name bride-name">Prasanth</span>
+        </p>
+
+        <!-- Open Invitation Button -->
+        <button id="btn-open-invitation" class="btn-open-invitation">
+          <span>Open Invitation</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       2. DIVINE RAMA & SITA OPENING ANIMATION OVERLAY
+       ====================================================================== -->
+  <div id="divine-opening-overlay" class="divine-opening-overlay" aria-label="Divine Blessing Animation">
+    <!-- Ambient Sacred Atmosphere -->
+    <div class="divine-ambient-bg">
+      <div class="divine-light-beam"></div>
+      <div class="divine-shimmer-ring"></div>
+    </div>
+
+    <!-- Skip Button -->
+    <button id="btn-skip-divine" class="btn-skip-divine" aria-label="Skip Animation">Skip &rarr;</button>
+
+    <!-- Divine Hands Stage (Steps 1, 2, 3, 4, 5) -->
+    <div class="divine-anim-stage" id="divine-anim-stage">
+      <!-- Sacred Junction Contact Glow Halo -->
+      <div class="divine-contact-glow" id="divine-contact-glow"></div>
+
+      <!-- Lord Rama Hand (Left Side - Real photo cutout) -->
+      <div class="divine-hand-wrapper divine-hand-rama" id="divine-hand-rama">
+        <img src="assets\images\rama hand cutout-fotor-bg-remover-20261001112436.png" alt="Lord Rama Divine Hand" class="divine-hand-img divine-hand-rama-img">
+      </div>
+
+      <!-- Goddess Sita Hand (Right Side - Real photo cutout) -->
+      <div class="divine-hand-wrapper divine-hand-sita" id="divine-hand-sita">
+        <img src="assets/images/sita_hand_cutout.png" alt="Goddess Sita Divine Hand" class="divine-hand-img divine-hand-sita-img">
+      </div>
+    </div>
+
+    <!-- Revealed Divine Image & Couple Names (Steps 6, 7) -->
+    <div class="divine-revealed-content" id="divine-revealed-content">
+      <div class="divine-painting-frame">
+        <div class="divine-frame-inner">
+          <img src="assets/images/ramsita.jpg" alt="Lord Rama and Goddess Sita Kalyana Blessing" class="divine-portrait-img">
+        </div>
+      </div>
+
+      <div class="divine-names-reveal">
+        <p class="divine-eyebrow">With the Divine Blessings of Sri Sita Rama</p>
+        <div class="divine-couple-title">
+          <h2 class="couple-name">Karthesha</h2>
+          <span class="ampersand">&amp;</span>
+          <h2 class="couple-name bride-name">Prasanth</h2>
+        </div>
+        <p class="divine-date-pill">December 4, 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MAIN WEDDING WEBSITE CONTENT (Continuous Scrolling Invitation)
+       ====================================================================== -->
+  <main id="main-website">
+
+    <!-- Hero / Divine Greeting Banner -->
+    <section class="hero-divine-section">
+      <div class="site-container">
+        <div class="hero-divine-card reveal-fade-up">
+          <div class="hero-divine-img-box">
+            <img src="assets/images/ramsita.jpg" alt="Lord Rama &amp; Goddess Sita Kalyana Blessings">
+          </div>
+          <span class="section-eyebrow">With the Divine Blessings of Sri Sita Rama</span>
+          <h1 class="hero-divine-names">
+            <span class="couple-name">Karthesha</span>
+            <span class="hero-ampersand">&amp;</span>
+            <span class="couple-name bride-name">Prasanth</span>
+          </h1>
+          <div class="hero-hashtag-badge">#PraKar</div>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. OUR FAMILIES SECTION
+         ==================================================================== -->
+    <section class="families-section section-pad" id="our-families">
+      <div class="site-container">
+        <header class="section-header reveal-fade-up">
+          <span class="section-eyebrow">Blessings &amp; Traditions</span>
+          <h2 class="section-title">Our Families</h2>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+          <p class="section-desc">With love, respect, and the unconditional blessings of our beloved families</p>
+        </header>
+
+        <!-- Main Focus: Bride's and Groom's Parents -->
+        <div class="parents-grid">
+          <!-- Bride's Parents -->
+          <div class="family-card-parent reveal-fade-up">
+            <div class="parent-kalash-icon">
+              <img src="assets/images/kalash.svg" alt="Kalash Icon">
+            </div>
+            <span class="parent-role-badge">Bride’s Parents</span>
+            <h3 class="parent-name">Tata Hanumantha Rao</h3>
+            <div class="parent-connector">&amp;</div>
+            <h3 class="parent-name">Tata Lakshmi Kumari</h3>
+          </div>
+
+          <!-- Groom's Parents -->
+          <div class="family-card-parent reveal-fade-up">
+            <div class="parent-kalash-icon">
+              <img src="assets/images/kalash.svg" alt="Kalash Icon">
+            </div>
+            <span class="parent-role-badge">Groom’s Parents</span>
+            <h3 class="parent-name">Inavolu Purnachandra Rao</h3>
+            <div class="parent-connector">&amp;</div>
+            <h3 class="parent-name">Inavolu Indrani</h3>
+          </div>
+        </div>
+
+        <!-- Immediate Family Members -->
+        <div class="relatives-grid">
+          <!-- Bride's Sister & Husband -->
+          <div class="family-card-relative reveal-fade-up">
+            <h4 class="relative-role-title">Bride’s Sister &amp; Husband</h4>
+            <p class="relative-name">Kandukuri Sai Kiran</p>
+            <p class="relative-name">Kandukuri Kiranmai</p>
+          </div>
+
+          <!-- Groom's Brother & Wife -->
+          <div class="family-card-relative reveal-fade-up">
+            <h4 class="relative-role-title">Groom’s Brother &amp; Wife</h4>
+            <p class="relative-name">Inavolu Dinesh</p>
+            <p class="relative-name">Inavolu Sujana</p>
+          </div>
+
+          <!-- Groom's Sister & Husband -->
+          <div class="family-card-relative reveal-fade-up">
+            <h4 class="relative-role-title">Groom’s Sister &amp; Husband</h4>
+            <p class="relative-name">Mitta Phanindra</p>
+            <p class="relative-name">Mitta Sowgandhika</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. WEDDING & RECEPTION (OUR SPECIAL DAYS)
+         ==================================================================== -->
+    <section class="special-days-section section-pad" id="our-special-days">
+      <div class="site-container">
+        <header class="section-header reveal-fade-up">
+          <span class="section-eyebrow">Auspicious Celebrations</span>
+          <h2 class="section-title">Our Special Days</h2>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+          <p class="section-desc">Join our joyous celebrations as we tie the knot and embark on our sacred journey</p>
+        </header>
+
+        <div class="events-dual-grid">
+          <!-- WEDDING CARD -->
+          <div class="event-card card-wedding reveal-fade-up">
+            <span class="event-badge">Sacred Muhurtham</span>
+            <h3 class="event-title">Wedding</h3>
+
+            <div class="event-date-wrap">
+              <div class="event-date-main">December 4, 2026</div>
+              <div class="event-time-highlight">8:58 PM</div>
+              <span class="event-sub-label">Auspicious Muhurtham</span>
+            </div>
+            <div class="event-loc-preview">Vinukonda, Andhra Pradesh</div>
+            <div class="event-venue-preview">Join us for a celebration of love, traditions and togetherness</div>
+          </div>
+
+          <!-- RECEPTION CARD -->
+          <div class="event-card card-reception reveal-fade-up">
+            <span class="event-badge">Grand Celebration</span>
+            <h3 class="event-title">Reception</h3>
+
+            <div class="event-date-wrap">
+              <div class="event-date-main">December 6, 2026</div>
+              <div class="event-time-highlight">7:00 PM</div>
+              <span class="event-sub-label">Evening Dinner &amp; Blessings</span>
+            </div>
+
+            <div class="event-loc-preview">Narasaraopeta, Andhra Pradesh</div>
+            <div class="event-venue-preview">Join us for an evening of music, dining &amp; joy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. VENUES + GOOGLE MAPS + ADD TO CALENDAR
+         ==================================================================== -->
+    <section class="venues-section section-pad" id="venue-and-details">
+      <div class="site-container">
+        <header class="section-header reveal-fade-up">
+          <span class="section-eyebrow">Directions &amp; Reminders</span>
+          <h2 class="section-title">Venue &amp; Details</h2>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+          <p class="section-desc">Find venues easily and save both celebrations directly to your phone calendar</p>
+        </header>
+
+        <div class="venue-details-grid">
+          <!-- Wedding Venue Card -->
+          <div class="venue-box reveal-fade-up">
+            <div class="venue-box-header">
+              <span class="venue-type-tag">Muhurtham Celebration</span>
+              <h3 class="venue-title">Wedding Ceremony</h3>
+
+              <div class="venue-address-block">
+                <p class="venue-place-name">Tashvi Grands & Convention Hall</p>
+                <p class="venue-place-city">Vinukonda, Andhra Pradesh</p>
+                <span class="venue-status-note">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                  </svg>
+                  Venue details will be updated here shortly
+                </span>
+              </div>
+            </div>
+
+            <div class="venue-actions-group">
+              <!-- View Wedding Venue Button (Opens Modal with notice) -->
+              <button id="btn-view-wedding-venue" class="btn-venue-maps" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <span>View Wedding Venue</span>
+              </button>
+
+              <!-- Add Wedding to Calendar Button -->
+              <button id="btn-add-wedding-cal" class="btn-add-calendar" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                </svg>
+                <span>Add Wedding to Calendar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Reception Venue Card -->
+          <div class="venue-box reveal-fade-up">
+            <div class="venue-box-header">
+              <span class="venue-type-tag">Evening Celebration</span>
+              <h3 class="venue-title">Reception Ceremony</h3>
+
+              <div class="venue-address-block">
+                <p class="venue-place-name">Mega Convention Hall</p>
+                <p class="venue-place-city">Narasaraopeta, Andhra Pradesh</p>
+                <span class="venue-status-note" style="color: #2E7D32;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  Location mapped and confirmed
+                </span>
+              </div>
+            </div>
+
+            <div class="venue-actions-group">
+              <!-- View Reception Venue Button (Exact Google Maps Link) -->
+              <a href="https://maps.app.goo.gl/mqv5M2b1FCXx2fSG8?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn-venue-maps">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <span>View Reception Venue</span>
+              </a>
+
+              <!-- Add Reception to Calendar Button -->
+              <button id="btn-add-reception-cal" class="btn-add-calendar" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                </svg>
+                <span>Add Reception to Calendar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. OUR BEAUTIFUL MOMENTS (PHOTO GALLERY CAROUSEL)
+         ==================================================================== -->
+    <section class="gallery-section section-pad" id="beautiful-moments">
+      <div class="site-container">
+        <header class="section-header reveal-fade-up">
+          <span class="section-eyebrow">Sweet Memories</span>
+          <h2 class="section-title">Our Beautiful Moments</h2>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+        </header>
+
+        <div class="carousel-outer-wrapper reveal-fade-up">
+          <!-- Continuous Auto-Sliding & Touch/Swipe Carousel -->
+          <div class="carousel-container" id="carousel-container">
+            <!-- 1. Pre-wedding photos -->
+            <div class="carousel-slide">
+              <div class="gallery-card-img-wrap">
+                <img src="assets\images\gallery\Nana7.jpeg" alt="Pre-wedding photos">
+              </div>
+              <div class="gallery-card-info">
+                <h4 class="gallery-card-title">Beautiful Beginnings</h4>
+                <p class="gallery-card-caption">Where beautiful memories found their first chapter</p>
+              </div>
+            </div>
+
+            <!-- 2. Engagement photos -->
+            <div class="carousel-slide">
+              <div class="gallery-card-img-wrap">
+                <img src="assets\images\gallery\Nana4.jpeg" alt="Engagement photos">
+              </div>
+              <div class="gallery-card-info">
+                <h4 class="gallery-card-title">Cherished Moments</h4>
+                <p class="gallery-card-caption">Little moments that become memories to treasure</p>
+              </div>
+            </div>
+
+            <!-- 3. Couple photos -->
+            <div class="carousel-slide">
+              <div class="gallery-card-img-wrap">
+                <img src="assets\images\gallery\Nana8.jpeg" alt="Couple photos">
+              </div>
+              <div class="gallery-card-info">
+                <h4 class="gallery-card-title">Between Us</h4>
+                <p class="gallery-card-caption">The laughter, comfort, and magic we share</p>
+              </div>
+            </div>
+
+            <!-- 4. Before-marriage memories -->
+            <div class="carousel-slide">
+              <div class="gallery-card-img-wrap">
+                <img src="assets\images\gallery\Nana9.jpeg" alt="Before-marriage memories">
+              </div>
+              <div class="gallery-card-info">
+                <h4 class="gallery-card-title">Little Things,Big Feelings</h4>
+                <p class="gallery-card-caption">Because sometimes the smallest moments mean the most</p>
+              </div>
+            </div>
+
+            <!-- 5. Journey/memories together -->
+            <div class="carousel-slide">
+              <div class="gallery-card-img-wrap">
+                <img src="assets\images\gallery\Nana1.jpeg" alt="Journey and memories together">
+              </div>
+              <div class="gallery-card-info">
+                <h4 class="gallery-card-title">Moments We keep</h4>
+                <p class="gallery-card-caption">Memories close to our hearts, forever</p>
+              </div>
+            </div>
+
+            <!-- 6. Other beautiful moments -->
+            <div class="carousel-slide">
+              <div class="gallery-card-img-wrap">
+                <img src="assets\images\gallery\Nana3.jpeg" alt="Other beautiful moments">
+              </div>
+              <div class="gallery-card-info">
+                <h4 class="gallery-card-title">Our Little Story</h4>
+                <p class="gallery-card-caption">A collection of moments that make our story ours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Navigation Buttons & Dots -->
+          <div class="carousel-controls">
+            <button id="carousel-btn-prev" class="carousel-btn" aria-label="Previous Photo">
+              <svg viewBox="0 0 24 24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+
+            <div class="carousel-pagination-dots" id="carousel-pagination"></div>
+
+            <button id="carousel-btn-next" class="carousel-btn" aria-label="Next Photo">
+              <svg viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. OUR JOURNEY SECTION
+         ==================================================================== -->
+    <section class="journey-section section-pad" id="our-journey">
+      <div class="site-container">
+        <header class="section-header reveal-fade-up">
+          <span class="section-eyebrow">From Families to Forever</span>
+          <h2 class="section-title">Our Journey</h2>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+        </header>
+
+        <div class="journey-card reveal-fade-up">
+          <svg class="journey-quote-icon" viewBox="0 0 24 24">
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+          </svg>
+
+          <!-- EXACT PARAGRAPH REQUIREMENT -->
+          <p class="journey-paragraph-text">
+            “It all began with a simple “yes” and a beautiful family bond. One year of conversations, understanding, laughter, emotions, and countless memories brought us closer than ever. What started with our families became a love that grew naturally between us—and today, we are ready to begin our forever together. ❤️”
+          </p>
+
+          <div class="journey-signature">
+            <span class="couple-name">Prasanth</span> <span class="sig-ampersand">&amp;</span> <span class="couple-name bride-name">Karthesha</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. WEDDING COUNTDOWN SECTION
+         ==================================================================== -->
+    <section class="countdown-section section-pad" id="wedding-countdown">
+      <div class="site-container">
+        <header class="section-header reveal-fade-up">
+          <span class="section-eyebrow">Save the Date</span>
+          <h2 class="section-title">Counting Down to Forever</h2>
+          <div class="section-divider">
+            <span class="section-divider-motif"></span>
+          </div>
+          <p class="section-desc">December 4, 2026 • 8:58 PM Muhurtham</p>
+        </header>
+
+        <!-- Live Clock Countdown Display -->
+        <div class="countdown-grid reveal-fade-up" id="countdown-grid">
+          <div class="countdown-box">
+            <div class="countdown-num" id="count-days">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="count-hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="count-minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="count-seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+
+        <div class="countdown-finished-msg" id="countdown-finished-msg">
+          Today, our forever begins! ❤️
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         10. WHATSAPP SHARE SECTION
+         ==================================================================== -->
+    <section class="share-section section-pad" id="share-our-wedding">
+      <div class="site-container">
+        <div class="share-card reveal-fade-up">
+          <header class="section-header" style="margin-bottom: 24px;">
+            <span class="section-eyebrow">Spread the Joy</span>
+            <h2 class="section-title">Share Our Wedding</h2>
+            <div class="section-divider">
+              <span class="section-divider-motif"></span>
+            </div>
+          </header>
+          <p>
+            Invite your loved ones and share the celebration with a single tap on WhatsApp.
+          </p>
+          <button id="btn-whatsapp-share" class="btn-whatsapp-share" type="button">
+            <svg viewBox="0 0 24 24">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41 1.55 1.55 2.41 3.62 2.41 5.83 0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.81-.37-4.04-1.07l-.29-.17-3.12.82.83-3.04-.19-.31c-.77-1.26-1.18-2.72-1.18-4.22 0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.3z"/>
+            </svg>
+            <span>Share Our Wedding 💚</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         11. FINAL FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="site-container">
+        <div class="footer-motif">
+          <img src="assets/images/diya.svg" alt="Auspicious Diya">
+        </div>
+
+        <!-- EXACT CLOSING TEXT -->
+        <p class="footer-emotional-message">
+          “We can't wait to celebrate this beautiful journey with you♥️”
+        </p>
+
+        <!-- EXACT SIGNOFF -->
+        <p class="footer-signoff">
+          with love, PraKar
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ======================================================================
+       VENUE DETAILS COMING SOON MODAL
+       ====================================================================== -->
+  <div id="venue-details-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-icon">
+        <img src="assets/images/kalash.svg" alt="Auspicious Kalash">
+      </div>
+      <h3 id="modal-title" class="modal-title">Wedding Venue Update</h3>
+      <p class="modal-body">
+        The marriage celebration will take place in <strong>Vinukonda, Andhra Pradesh</strong> on <strong>December 4, 2026</strong> at <strong>8:58 PM</strong>.
+        <br><br>
+        The exact Kalyana Mandapam name and Google Maps navigation link are currently being finalized and will be updated here soon!
+      </p>
+      <button id="btn-close-modal" class="btn-modal-close" type="button">Understood</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Configuration & Main Logic -->
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

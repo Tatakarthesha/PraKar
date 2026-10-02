@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="diyaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3C4"/>
+      <stop offset="50%" stop-color="#F1C40F"/>
+      <stop offset="100%" stop-color="#B7950B"/>
+    </linearGradient>
+    <radialGradient id="flameGrad" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#FFFDE7"/>
+      <stop offset="30%" stop-color="#FFEE58"/>
+      <stop offset="70%" stop-color="#FF7043"/>
+      <stop offset="100%" stop-color="#D84315"/>
+    </radialGradient>
+    <filter id="flameGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Lamp Base & Bowl -->
+  <path d="M40 135 L120 135 L110 145 L50 145 Z" fill="url(#diyaGold)"/>
+  <path d="M70 120 L90 120 L90 135 L70 135 Z" fill="url(#diyaGold)"/>
+  <path d="M20 95 Q80 135 140 95 Q145 90 135 90 Q80 110 25 90 Z" fill="url(#diyaGold)" stroke="#9A7B0C" stroke-width="1.5"/>
+
+  <!-- Flame with Glow -->
+  <ellipse cx="80" cy="65" rx="30" ry="40" fill="#FFE082" fill-opacity="0.25" filter="url(#flameGlow)"/>
+  <path d="M80 40 Q65 65 72 82 Q80 92 88 82 Q95 65 80 40 Z" fill="url(#flameGrad)" filter="url(#flameGlow)"/>
+  <circle cx="80" cy="75" r="4" fill="#FFFFFF"/>
+</svg>
